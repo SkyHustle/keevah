@@ -7,7 +7,7 @@ class LoanRequest < ActiveRecord::Base
   has_many :users, through: :loan_requests_contributors
   has_many :loan_requests_categories
   has_many :categories, through: :loan_requests_categories
-  belongs_to :user
+  belongs_to :user #Borrower
   enum status: %w(active funded)
   enum repayment_rate: %w(monthly weekly)
   before_create :assign_default_image
