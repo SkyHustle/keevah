@@ -28,7 +28,9 @@ gem 'bootstrap-will_paginate'
 
 gem "skylight"
 gem 'newrelic_rpm'
-gem "rack-mini-profiler"
+
+gem 'dalli'
+# gem "rack-mini-profiler"
 
 group :development, :test do
   gem "pry-rails"

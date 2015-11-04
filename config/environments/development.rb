@@ -19,6 +19,9 @@ Rails.application.configure do
 
   config.assets.raise_runtime_errors = true
 
+  config.cache_store = :dalli_store
+  config.action_controller.perform_caching = true
+
   config.after_initialize do
     Bullet.enable = true
     Bullet.alert = true
