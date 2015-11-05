@@ -6,6 +6,7 @@ namespace :load_script do
     if `which phantomjs`.empty?
       raise "PhantomJS not found. Make sure you have it installed. Try: 'brew install phantomjs'"
     end
+    puts 'DO IT'
     LoadScript::Session.new(ARGV[1]).run
   end
 end

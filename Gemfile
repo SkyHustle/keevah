@@ -30,7 +30,7 @@ gem "skylight"
 gem 'newrelic_rpm'
 
 gem 'dalli'
-# gem "rack-mini-profiler"
+gem "rack-mini-profiler"
 
 group :development, :test do
   gem "pry-rails"
