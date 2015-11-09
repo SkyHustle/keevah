@@ -7,7 +7,7 @@ namespace :load_script do
       raise "PhantomJS not found. Make sure you have it installed. Try: 'brew install phantomjs'"
     end
     puts 'DO IT'
-    5.times.map { Thread.new { LoadScript::Session.new(ARGV[1]).run } }.map(&:join)
+    4.times.map { Thread.new { LoadScript::Session.new(ARGV[1]).run } }.map(&:join)
   end
 end
 
