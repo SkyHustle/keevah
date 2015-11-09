@@ -4,16 +4,17 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-3 pull-left">
-      <select class="form-control btn-info">
-        <option><%= link_to "All", loan_requests_path, method: :get, class: "btn btn-primary" %></option>
-          <% Category.all.each do |category| %>
-            <option><%= link_to category.title, loan_requests_path(category: category.title), class: "btn btn-primary" %></option>
-          <% end %>
-      </select>
+    <div class="col-md-12 pull-left btn-group" role="group">
+      <%= link_to "All", loan_requests_path, method: :get, class: "btn btn-primary" %>
+      <% Category.all.each do |category| %>
+        <%= link_to category.title, loan_requests_path(category: category.title), class: "btn btn-primary" %>
+      <% end %>
     </div>
-    <%= render "shared/search" %>
   </div>
 </div>
 <br>
-<%= render "shared/lender_thumbnail" %>
+
+<div class="lender-thumbnails">
+  <%= will_paginate %>
+  <%= render "shared/lender_thumbnail" %>
+</div>

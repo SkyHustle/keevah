@@ -2,7 +2,12 @@ class LoanRequestsController < ApplicationController
   before_action :set_loan_request, only: [:update, :show]
 
   def index
-    @loan_requests = LoanRequest.paginate(page: params[:page])
+    if params[:category]
+      loans_by_category = LoanRequest.joins(:categories).where(categories: {title: params[:category]})
+      @loan_requests = loans_by_category.paginate(page: params[:page], per_page: 12, total_entries: 500)
+    else
+      @loan_requests = LoanRequest.paginate(page: params[:page], per_page: 12, total_entries: 500)
+    end
   end
 
   def create
@@ -50,6 +55,6 @@ class LoanRequestsController < ApplicationController
   end
 
   def set_loan_request
-    @loan_request = LoanRequest.find(params[:id])
+    LoanRequest.includes(:categories).find(params[:id])
   end
 end

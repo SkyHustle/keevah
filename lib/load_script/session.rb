@@ -46,7 +46,12 @@ module LoadScript
     end
 
     def actions
-      [:browse_loan_requests, :sign_up_as_lender, :user_browse_loan_requests, :sign_up_as_borrower]
+      [:browse_loan_requests,
+       :sign_up_as_lender,
+       :user_browse_loan_requests,
+       :sign_up_as_borrower,
+       :user_views_loan_requests_by_category
+      ]
     end
 
     def log_in(email="demo+horace@jumpstartlab.com", pw="password")
@@ -110,8 +115,26 @@ module LoadScript
       end
     end
 
+    def user_views_loan_requests_by_category
++      puts "user views loan requests filtered by category"
++      log_in
++      session.click_link "Lend"
++      session.click_link "Agriculture"
++      log_out
+    end
+
     def categories
-      ["Agriculture", "Education", "Community"]
+      ["Agriculture",
++       "Education",
++       "Water and Sanitation",
++       "Youth",
++       "Conflict Zones",
++       "Transportation",
++       "Housing",
++       "Banking and Finance",
++       "Manufacturing",
++       "Food and Nutrition",
++       "Vulnerable Groups"].sample
     end
   end
 end
