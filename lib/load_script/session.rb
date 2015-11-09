@@ -56,6 +56,7 @@ module LoadScript
 
     def log_in(email="demo+horace@jumpstartlab.com", pw="password")
       log_out
+      puts "#{host}"
       session.visit host
       session.click_link("Log In")
       session.fill_in("email_address", with: email)
@@ -89,6 +90,14 @@ module LoadScript
       "TuringPivotBots+#{name.split.join}@gmail.com"
     end
 
+    def user_views_loan_requests_by_category
+      puts "user views loan requests of chosen category"
+      # log_in
+      session.visit "#{host}/browse"
+      session.click_link "Agriculture"
+      # log_out
+    end
+
     def sign_up_as_lender(name = new_user_name)
       log_out
       session.find("#sign-up-dropdown").click
@@ -115,26 +124,18 @@ module LoadScript
       end
     end
 
-    def user_views_loan_requests_by_category
-+      puts "user views loan requests filtered by category"
-+      log_in
-+      session.click_link "Lend"
-+      session.click_link "Agriculture"
-+      log_out
-    end
-
     def categories
       ["Agriculture",
-+       "Education",
-+       "Water and Sanitation",
-+       "Youth",
-+       "Conflict Zones",
-+       "Transportation",
-+       "Housing",
-+       "Banking and Finance",
-+       "Manufacturing",
-+       "Food and Nutrition",
-+       "Vulnerable Groups"].sample
+       "Education",
+       "Water and Sanitation",
+       "Youth",
+       "Conflict Zones",
+       "Transportation",
+       "Housing",
+       "Banking and Finance",
+       "Manufacturing",
+       "Food and Nutrition",
+       "Vulnerable Groups"].sample
     end
   end
 end
