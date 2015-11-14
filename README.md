@@ -1,3 +1,23 @@
+[Link To App](https://scale-up-keevah.herokuapp.com/)
+[Link To Project Spec](https://scale-up-keevah.herokuapp.com/)
+
+## The Scale-Up
+
+In this project, the __Scale Up__, we'll be optimizing an existing project for performance and
+load. A few of the focuses of the project will be:
+
+* Handling a database with large numbers of records
+* Handling heavy request volume/throughput
+* Diagnosing and fixing performance bottlenecks
+  (without compromising existing features)
+* Monitoring production (error and performance) behavior of an application
+
+For this project, we will be receiving an existing "Pivot" project
+to maintain and continue building upon. We will be already
+deployed to production environments, and it will be our responsibility
+to keep them that way, adding new features and improving performance while
+avoiding downtime.
+
 ## The Pivot - Keevahh
 
 Keevahh is a micro-lending platform that allows both lenders and borrowers to interact. Borrowers are able to create a project or loan request and lenders are able to contribute to various projects.
