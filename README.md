@@ -1,6 +1,6 @@
 [Link To App](https://scale-up-keevah.herokuapp.com/)
 
-[Link To Project Spec](https://scale-up-keevah.herokuapp.com/)
+[Link To Project Spec](https://github.com/turingschool/curriculum/blob/master/source/projects/the_scale_up.markdown)
 
 ## The Scale-Up
 
